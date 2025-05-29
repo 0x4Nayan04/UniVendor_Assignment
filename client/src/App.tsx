@@ -47,19 +47,43 @@ import IndependentCartPage from "./pages/independent-cart";
 import PrivateRoute from "@/components/PrivateRoute";
 import { Button } from "@/components/ui/button";
 
-// Mock featured products data
+// Enhanced mock featured products data with diverse categories and real images
 const featuredProducts = [
+  // Fashion
   {
     id: "1",
-    name: "Men's Casual Shirt",
+    name: "Men's Premium Casual Shirt",
     category: "Fashion",
     price: 29.99,
     rating: 4.7,
     originalPrice: 59.99,
     badge: "SALE",
-    image:
-      "https://rukminim2.flixcart.com/image/512/512/xif0q/shirt/f/x/u/m-beige-chex-shirt-formal-vellosta-original-imahap5cz32bhsja.jpeg?q=90&crop=false",
+    image: "https://rukminim2.flixcart.com/image/512/512/xif0q/shirt/f/x/u/m-beige-chex-shirt-formal-vellosta-original-imahap5cz32bhsja.jpeg?q=90&crop=false",
   },
+];
+
+// Enhanced category data with better images
+const categoryData = [
+  {
+    name: "Electronics",
+    image: "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=400&h=400&fit=crop&crop=center",
+    link: "#electronics"
+  },
+  {
+    name: "Fashion",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop&crop=center",
+    link: "#fashion"
+  },
+  {
+    name: "Home",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop&crop=center",
+    link: "#home"
+  },
+  {
+    name: "Beauty",
+    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop&crop=center",
+    link: "#beauty"
+  }
 ];
 
 interface NewsletterProps {
@@ -275,46 +299,25 @@ function Router({
             <div className="container mx-auto px-4">
               <h2 className="text-2xl font-bold mb-8 text-gray-900">Shop by Category</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="#" className="group">
-                  <div className="rounded-lg overflow-hidden bg-gray-100 aspect-square relative">
-                    <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-indigo-600/20 transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium">Electronics</span>
+                {categoryData.map((category, index) => (
+                  <a href={category.link} key={index} className="group">
+                    <div className="rounded-lg overflow-hidden bg-gray-100 aspect-square relative">
+                      <img 
+                        src={category.image} 
+                        alt={category.name}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <span className="bg-white/95 text-gray-900 px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+                            {category.name}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a>
-                <a href="#" className="group">
-                  <div className="rounded-lg overflow-hidden bg-gray-100 aspect-square relative">
-                    <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-indigo-600/20 transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium">Fashion</span>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="#" className="group">
-                  <div className="rounded-lg overflow-hidden bg-gray-100 aspect-square relative">
-                    <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-indigo-600/20 transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium">Home</span>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="#" className="group">
-                  <div className="rounded-lg overflow-hidden bg-gray-100 aspect-square relative">
-                    <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-indigo-600/20 transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <span className="bg-white/90 text-gray-900 px-4 py-2 rounded-full text-sm font-medium">Beauty</span>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+                  </a>
+                ))}
               </div>
             </div>
           </section>
