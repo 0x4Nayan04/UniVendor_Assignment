@@ -10,6 +10,18 @@ Before deploying to production:
 3. Use proper environment variables for sensitive data
 4. Never commit real credentials to version control
 
+## 📋 Assignment Implementation
+
+For detailed information about the features implemented as part of the technical assignment, please refer to the [Assignment Implementation Guide](Changes_Assignment.md).
+
+### Quick Overview
+This project includes implementation of the following assignment requirements:
+- ✅ Dynamic Image Preview on Color Hover
+- ✅ Add to Cart Validation (Color + Size Required)
+- ✅ Cart Counter Badge with Real-time Updates
+- ✅ Guest Cart Functionality with localStorage
+- ✅ Cart Persistence After User Login
+
 ## Features
 
 1. **Dynamic Image Preview on Color Hover** - Update main product image when hovering over color swatch without selecting size
