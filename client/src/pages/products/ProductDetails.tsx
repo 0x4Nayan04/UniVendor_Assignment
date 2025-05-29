@@ -63,10 +63,8 @@ const mockProducts: { [key: string]: Product } = {
       "Sizes Available": "XS, S, M, L, XL, XXL",
     },
     images: [
-      "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/v/x/w/m-beige-chex-shirt-formal-vellosta-original-imahap5c7chpyhzg.jpeg?q=90&crop=false",
       "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/f/x/u/m-beige-chex-shirt-formal-vellosta-original-imahap5cz32bhsja.jpeg?q=90&crop=false",
-      "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/y/m/l/m-beige-chex-shirt-formal-vellosta-original-imahap5cbfhavrzd.jpeg?q=90&crop=false",
-    ],
+      ],
     inStock: true,
     stockCount: 50,
     brand: "ClassicWear",
